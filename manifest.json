@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "Minha Extensão",
+  "version": "1.0",
+  "description": "Uma extensão simples de base",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "tabs",
+    "storage"
+  ],
+  "action": {
+    /* Para exibir "popup.html" ao clicar na extensão */
+    "default_popup": "popup/popup.html",
+    /* Icone da extensão */
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  },
+  /* Para injetar scripts JS em sites específicos listados no "matches" */
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.google.com/*"
+      ],
+      "js": ["inject/inject.js"]
+    }
+  ]
+}
